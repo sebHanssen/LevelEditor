@@ -7,12 +7,13 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using System.Printing;
 using CommunityToolkit.Mvvm.Input;
 using System.IO;
+using LevelEditor.Events;
 
 namespace LevelEditor.ViewModel
 {
-    public partial class NewLevelViewModel : ObservableObject
+    public partial class MainViewModel : ObservableObject
     {
-        public NewLevelViewModel()
+        public MainViewModel()
         {
         }
     }

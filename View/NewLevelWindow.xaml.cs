@@ -1,5 +1,7 @@
-﻿using System;
+﻿using LevelEditor.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +23,14 @@ namespace LevelEditor.View
     {
         public NewLevelWindow()
         {
+            DataContext = new NewLevelViewModel();
             InitializeComponent();
+        }
+
+        private void CreateLevelClick(object sender, RoutedEventArgs e)
+        {
+            Visibility = Visibility.Hidden;
+            App.events.OnCreateLevel(HeightBox.Text, WidthBox.Text);
         }
     }
 }

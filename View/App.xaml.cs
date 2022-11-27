@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using LevelEditor.Events;
 
 namespace LevelEditor
 {
@@ -13,5 +14,6 @@ namespace LevelEditor
     /// </summary>
     public partial class App : Application
     {
+        public static readonly LevelEditorEvents events = new();
     }
 }

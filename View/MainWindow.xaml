@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LevelEditor.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" MinHeight="720" MinWidth="1280"
+        Title="MainWindow" Height="720" Width="1280" 
         d:DataContext="{d:DesignInstance Type=local:MainViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,11 +21,18 @@
             <Button Content="New Level" Click="NewLevelClick" HorizontalAlignment="Left" Margin="0,0,0,0" Padding="5,0" BorderBrush="Black" BorderThickness="0,0,0,1"></Button>
         </DockPanel>
         <Grid Grid.Column="0" Grid.Row="1">
-            <ScrollViewer Background="#70999999">
+            <ScrollViewer Background="#70999999" VerticalScrollBarVisibility="Auto">
                 <DockPanel>
                     <Button DockPanel.Dock="Top" Height="48" Width="48" VerticalAlignment="Top" Margin="0,15,0,0"><Image Source="../Resources/empty.png"></Image></Button>
                     <Button DockPanel.Dock="Top" Height="48" Width="48" VerticalAlignment="Top" Margin="0,15,0,0"><Image Source="../Resources/grass.png"></Image></Button>
                     <Button DockPanel.Dock="Top" Height="48" Width="48" VerticalAlignment="Top" Margin="0,15,0,0"><Image Source="../Resources/water.png"></Image></Button>
+                </DockPanel>
+            </ScrollViewer>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <DockPanel x:Name="TileGrid">
+                    
                 </DockPanel>
             </ScrollViewer>
         </Grid>

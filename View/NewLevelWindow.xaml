@@ -18,12 +18,13 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Text="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+            <TextBox Name="HeightBox" Text="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
             <TextBlock Text="Height" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0"></TextBlock>
-            <TextBox Text="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
+            <TextBox Name="WidthBox" Text="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
             <TextBlock Text="Width" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0"></TextBlock>
         </Grid>
-        <Button Grid.Row="1" Content="Create Level" Width="100" Height="20" Margin="0,75,0,0"></Button>
+        <Button Grid.Row="1" Content="Create Level" Click="CreateLevelClick" Width="100" Height="20" Margin="0,75,0,0"></Button>
+        <TextBlock Grid.Row="1" Text="{Binding ErrorText}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,75"></TextBlock>
         <Border BorderBrush="Black" Grid.RowSpan="2" BorderThickness="5"></Border>
     </Grid>
 </Window>

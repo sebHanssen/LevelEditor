@@ -11,6 +11,9 @@
     <None Remove=".gitattributes" />
     <None Remove=".gitignore" />
     <None Remove="LICENSE.txt" />
+    <None Remove="Resources\empty.png" />
+    <None Remove="Resources\grass.png" />
+    <None Remove="Resources\water.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,12 +25,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\grass.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Model\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\empty.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\water.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

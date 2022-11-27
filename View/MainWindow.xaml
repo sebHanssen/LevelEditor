@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LevelEditor.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280"
+        Title="MainWindow" Height="720" Width="1280" MinHeight="720" MinWidth="1280"
         d:DataContext="{d:DesignInstance Type=local:MainViewModel}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,6 +17,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#90999999" BorderBrush="Black" BorderThickness="0,0,0,1"></Border>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Button Content="New Level" Click="NewLevelClick" HorizontalAlignment="Left" Margin="0,0,0,0" Padding="5,0" BorderBrush="Black" BorderThickness="0,0,0,1"></Button>
+        </DockPanel>
         <Grid Grid.Column="0" Grid.Row="1">
             <ScrollViewer Background="#70999999">
                 <DockPanel>

@@ -10,9 +10,9 @@ using System.IO;
 
 namespace LevelEditor.ViewModel
 {
-    public partial class NewLevelViewModel : ObservableObject
+    public partial class MainViewModel : ObservableObject
     {
-        public NewLevelViewModel()
+        public MainViewModel()
         {
         }
     }

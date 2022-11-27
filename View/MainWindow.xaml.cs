@@ -1,4 +1,5 @@
 ﻿using LevelEditor.ViewModel;
+using LevelEditor.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,16 @@ namespace LevelEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        NewLevelWindow newLevelWindow = new NewLevelWindow();
         public MainWindow()
         {
             DataContext = new MainViewModel();
             InitializeComponent();
+        }
+
+        private void NewLevelClick(object sender, RoutedEventArgs e)
+        {
+            newLevelWindow.Show();
         }
     }
 }

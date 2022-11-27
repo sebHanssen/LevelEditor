@@ -8,6 +8,18 @@
         Title="MainWindow" Height="720" Width="1280"
         d:DataContext="{d:DesignInstance Type=local:MainViewModel}">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <ScrollViewer Background="#70999999">
+                <DockPanel>
+                    <Button DockPanel.Dock="Top" Height="50" Width="50" VerticalAlignment="Top" Margin="0,20,0,0"></Button>
+                    <Button DockPanel.Dock="Top" Height="50" Width="50" VerticalAlignment="Top" Margin="0,20,0,0"></Button>
+                    <Button DockPanel.Dock="Top" Height="50" Width="50" VerticalAlignment="Top" Margin="0,20,0,0"></Button>
+                </DockPanel>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Window>

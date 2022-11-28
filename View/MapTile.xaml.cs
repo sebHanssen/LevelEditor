@@ -53,6 +53,14 @@ namespace LevelEditor.View
             App.events.OnMapTileClick(xCord, yCord);
         }
 
+        private void onEnter(object sender, RoutedEventArgs e)
+        {
+            if(Mouse.LeftButton == MouseButtonState.Pressed) 
+            {
+                App.events.OnMapTileClick(xCord, yCord);
+            }
+        }
+
         public void HandleChangeMapTile(object sender, ChangeMapTileEventArgs e)
         {
             if (xCord == e.XCord && yCord == e.YCord)

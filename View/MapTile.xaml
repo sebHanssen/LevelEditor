@@ -10,7 +10,7 @@
              >
     <Grid DataContext="{Binding ElementName=mapTile}">
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left">
-            <Image x:Name="MapTileImage" Height="48" Width="48" MouseLeftButtonDown="onClick" HorizontalAlignment="Left" Source="{Binding ImageSource}"></Image>
+            <Image x:Name="MapTileImage" Height="48" Width="48" MouseEnter="onEnter" MouseLeftButtonDown="onClick" HorizontalAlignment="Left" Source="{Binding ImageSource}"></Image>
         </Border>
     </Grid>
 </UserControl>

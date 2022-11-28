@@ -33,7 +33,7 @@ namespace LevelEditor.View
             App.events.ChangeMapTile += HandleChangeMapTile;
         }
 
-        private string? ImageSource
+        public string? ImageSource
         {
             get
             {
@@ -48,12 +48,12 @@ namespace LevelEditor.View
             DependencyProperty.Register("ImageSource", typeof(string),
                 typeof(MapTile), new PropertyMetadata("/Resources/empty.png"));
 
-        private void onClick(object sender, RoutedEventArgs e)
+        private void OnClick(object sender, RoutedEventArgs e)
         {
             App.events.OnMapTileClick(xCord, yCord);
         }
 
-        private void onEnter(object sender, RoutedEventArgs e)
+        private void OnEnter(object sender, RoutedEventArgs e)
         {
             if(Mouse.LeftButton == MouseButtonState.Pressed) 
             {
@@ -65,7 +65,7 @@ namespace LevelEditor.View
         {
             if (xCord == e.XCord && yCord == e.YCord)
             {
-                MapTileImage.Source = new BitmapImage(new Uri(e.SelectedTile, UriKind.Relative));
+                ImageSource = e.SelectedTile;
 
             }
         }

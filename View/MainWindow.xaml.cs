@@ -118,6 +118,10 @@ namespace LevelEditor
         private void LoadMap(object sender, RoutedEventArgs e)
         {
             TileGrid.Children.Clear();
+            if (!File.Exists(@"data.json"))
+            {
+                return;
+            }
             string json = File.ReadAllText(@"data.json");
             string[,]? map = JsonConvert.DeserializeObject<string[,]>(json);
             int savedHeight = map.GetLength(0);

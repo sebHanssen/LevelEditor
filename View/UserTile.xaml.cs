@@ -45,7 +45,7 @@ namespace LevelEditor.View
 
         private void SelectUserTile(object sender, RoutedEventArgs e)
         {
-
+            App.events.OnSelectTile(this.ImageSource);
         }
     }
 }

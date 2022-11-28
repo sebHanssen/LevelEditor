@@ -26,5 +26,35 @@ namespace LevelEditor.Events
         {
             DeployLevel?.Invoke(this, new DeployLevelEventArgs { Height = height, Width = width });
         }
+
+
+        public delegate void SelectTileEventHandler(object sender, SelectTileEventArgs e);
+
+        public event SelectTileEventHandler? SelectTile;
+
+        public virtual void OnSelectTile(string? tile)
+        {
+            SelectTile?.Invoke(this, new SelectTileEventArgs { Tile = tile });
+        }
+
+
+        public delegate void MapTileClickEventHandler(object sender, MapTileClickEventArgs e);
+
+        public event MapTileClickEventHandler? MapTileClick;
+
+        public virtual void OnMapTileClick(int xCord, int yCord)
+        {
+            MapTileClick?.Invoke(this, new MapTileClickEventArgs {XCord = xCord, YCord = yCord });
+        }
+
+
+        public delegate void ChangeMapTileEventHandler(object sender, ChangeMapTileEventArgs e);
+
+        public event ChangeMapTileEventHandler? ChangeMapTile;
+
+        public virtual void OnChangeMapTile(string? selectedTile, int xCord, int yCord)
+        {
+            ChangeMapTile?.Invoke(this, new ChangeMapTileEventArgs { SelectedTile = selectedTile, XCord = xCord, YCord = yCord});
+        }
     }
 }

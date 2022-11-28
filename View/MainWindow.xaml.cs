@@ -32,6 +32,27 @@ namespace LevelEditor
             DataContext = new MainViewModel();
             InitializeComponent();
             App.events.DeployLevel += HandleDeployLevel;
+
+            UserTile defaultTile1 = new()
+            {
+                ImageSource = "/Resources/empty.png"
+            };
+            DockPanel.SetDock(defaultTile1, Dock.Top);
+            UserTileGrid.Children.Add(defaultTile1);
+
+            UserTile defaultTile2 = new()
+            {
+                ImageSource = "/Resources/grass.png"
+            };
+            DockPanel.SetDock(defaultTile2, Dock.Top);
+            UserTileGrid.Children.Add(defaultTile2);
+
+            UserTile defaultTile3 = new()
+            {
+                ImageSource = "/Resources/water.png"
+            };
+            DockPanel.SetDock(defaultTile3, Dock.Top);
+            UserTileGrid.Children.Add(defaultTile3);
         }
 
         private void NewLevelClick(object sender, RoutedEventArgs e)
@@ -41,7 +62,7 @@ namespace LevelEditor
 
         private void LoadDefaultUserTiles(object sender, RoutedEventArgs e)
         {
-            UserTileGrid.Children.Clear();
+            UserTileGrid.Children.RemoveRange(1, UserTileGrid.Children.Count - 1);
 
             UserTile defaultTile1 = new()
             {
@@ -70,16 +91,21 @@ namespace LevelEditor
             TileGrid.Children.Clear();
             for (int i = 0; i < e.Height; i++)
             {
-                DockPanel dockPanel = new DockPanel();
-                dockPanel.VerticalAlignment = VerticalAlignment.Top;
+                DockPanel dockPanel = new()
+                {
+                    VerticalAlignment = VerticalAlignment.Top
+                };
                 DockPanel.SetDock(dockPanel, Dock.Top);
                 TileGrid.Children.Add(dockPanel);
                 for(int j = 0; j < e.Width; j++)
                 {
                     MapTile mapTile = new()
                     {
-                        ImageSource = "/Resources/empty.png"
+                        xCord = i + 1,
+                        yCord = j + 1
+                        
                     };
+                    Debug.WriteLine(mapTile.xCord + " " + mapTile.yCord);
                     DockPanel.SetDock(mapTile, Dock.Left);
                     dockPanel.Children.Add(mapTile);
                 }

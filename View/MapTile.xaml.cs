@@ -1,5 +1,8 @@
-﻿using System;
+﻿using LevelEditor.Events;
+using LevelEditor.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,13 +24,16 @@ namespace LevelEditor.View
     /// </summary>
     public partial class MapTile : UserControl
     {
-        
+        public int xCord;
+        public int yCord;
         public MapTile()
         {
+            DataContext = new MainViewModel();
             InitializeComponent();
+            App.events.ChangeMapTile += HandleChangeMapTile;
         }
 
-        public string? ImageSource
+        private string? ImageSource
         {
             get
             {
@@ -42,10 +48,18 @@ namespace LevelEditor.View
             DependencyProperty.Register("ImageSource", typeof(string),
                 typeof(MapTile), new PropertyMetadata("/Resources/empty.png"));
 
-
-        private void ClickMapTile(object sender, RoutedEventArgs e)
+        private void onClick(object sender, RoutedEventArgs e)
         {
+            App.events.OnMapTileClick(xCord, yCord);
+        }
 
+        public void HandleChangeMapTile(object sender, ChangeMapTileEventArgs e)
+        {
+            if (xCord == e.XCord && yCord == e.YCord)
+            {
+                MapTileImage.Source = new BitmapImage(new Uri(e.SelectedTile, UriKind.Relative));
+
+            }
         }
     }
 }

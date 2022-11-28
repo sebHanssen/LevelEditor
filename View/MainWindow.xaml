@@ -24,6 +24,9 @@
         <Grid Grid.Column="0" Grid.Row="1">
             <ScrollViewer Background="#70999999" VerticalScrollBarVisibility="Auto">
                 <DockPanel x:Name="UserTileGrid">
+                    <Border BorderBrush="Black" BorderThickness="1" Height="48" Width="48" DockPanel.Dock="Top" VerticalAlignment="Top" Margin="0,15,0,0">
+                        <Image Source="{Binding SelectedUserTile}"></Image>
+                    </Border>
                 </DockPanel>
             </ScrollViewer>
         </Grid>

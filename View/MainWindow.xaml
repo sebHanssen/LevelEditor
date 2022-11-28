@@ -18,14 +18,12 @@
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#90999999" BorderBrush="Black" BorderThickness="0,0,0,1"></Border>
         <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
-            <Button Content="New Level" Click="NewLevelClick" HorizontalAlignment="Left" Margin="0,0,0,0" Padding="5,0" BorderBrush="Black" BorderThickness="0,0,0,1"></Button>
+            <Button Content="New Level" Click="NewLevelClick" HorizontalAlignment="Left" Margin="0,0,0,0" Padding="10,0" BorderBrush="Black" BorderThickness="0,0,0,1"></Button>
+            <Button Content="Default" Click="LoadDefaultUserTiles" HorizontalAlignment="Left" Margin="0,0,0,0" Padding="10,0" BorderBrush="Black" BorderThickness="0,0,0,1"></Button>
         </DockPanel>
         <Grid Grid.Column="0" Grid.Row="1">
             <ScrollViewer Background="#70999999" VerticalScrollBarVisibility="Auto">
-                <DockPanel>
-                    <Button DockPanel.Dock="Top" Height="48" Width="48" VerticalAlignment="Top" Margin="0,15,0,0"><Image Source="../Resources/empty.png"></Image></Button>
-                    <Button DockPanel.Dock="Top" Height="48" Width="48" VerticalAlignment="Top" Margin="0,15,0,0"><Image Source="../Resources/grass.png"></Image></Button>
-                    <Button DockPanel.Dock="Top" Height="48" Width="48" VerticalAlignment="Top" Margin="0,15,0,0"><Image Source="../Resources/water.png"></Image></Button>
+                <DockPanel x:Name="UserTileGrid">
                 </DockPanel>
             </ScrollViewer>
         </Grid>

@@ -26,6 +26,7 @@ namespace LevelEditor
     public partial class MainWindow : Window
     {
         NewLevelWindow newLevelWindow = new NewLevelWindow();
+        
         public MainWindow()
         {
             DataContext = new MainViewModel();
@@ -36,6 +37,32 @@ namespace LevelEditor
         private void NewLevelClick(object sender, RoutedEventArgs e)
         {
             newLevelWindow.Show();
+        }
+
+        private void LoadDefaultUserTiles(object sender, RoutedEventArgs e)
+        {
+            UserTileGrid.Children.Clear();
+
+            UserTile defaultTile1 = new()
+            {
+                ImageSource = "/Resources/empty.png"
+            };
+            DockPanel.SetDock(defaultTile1, Dock.Top);
+            UserTileGrid.Children.Add(defaultTile1);
+
+            UserTile defaultTile2 = new()
+            {
+                ImageSource = "/Resources/grass.png"
+            };
+            DockPanel.SetDock(defaultTile2, Dock.Top);
+            UserTileGrid.Children.Add(defaultTile2);
+
+            UserTile defaultTile3 = new()
+            {
+                ImageSource = "/Resources/water.png"
+            };
+            DockPanel.SetDock(defaultTile3, Dock.Top);
+            UserTileGrid.Children.Add(defaultTile3);
         }
 
         private void HandleDeployLevel(object sender, DeployLevelEventArgs e)
@@ -49,19 +76,12 @@ namespace LevelEditor
                 TileGrid.Children.Add(dockPanel);
                 for(int j = 0; j < e.Width; j++)
                 {
-                    Border border = new Border();
-                    Image image = new Image();
-                    border.BorderBrush = Brushes.Black;
-                    border.BorderThickness = new Thickness(1);
-                    border.HorizontalAlignment = HorizontalAlignment.Left;
-                    border.Child = image;
-                    
-                    image.Source = new BitmapImage(new Uri(@"/Resources/empty.png", UriKind.Relative));
-                    image.Height = 48;
-                    image.Width = 48;
-                    image.HorizontalAlignment = HorizontalAlignment.Left;
-                    DockPanel.SetDock(image, Dock.Left);
-                    dockPanel.Children.Add(border);
+                    MapTile mapTile = new()
+                    {
+                        ImageSource = "/Resources/empty.png"
+                    };
+                    DockPanel.SetDock(mapTile, Dock.Left);
+                    dockPanel.Children.Add(mapTile);
                 }
             }
         }

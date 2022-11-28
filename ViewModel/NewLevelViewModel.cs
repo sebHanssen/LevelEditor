@@ -22,16 +22,13 @@ namespace LevelEditor.ViewModel
 
         private void HandleCreateLevel(object sender, CreateLevelEventArgs e)
         {
-            int HeightValue = 0;
-            int WidthValue = 0;
-
-            bool heightSuccess = int.TryParse(e.Height, out HeightValue);
+            bool heightSuccess = int.TryParse(e.Height, out int HeightValue);
             if (!heightSuccess)
             {
                 ErrorText = "Invalid Input: Only numbers allowed";
             }
 
-            bool widthSuccess = int.TryParse(e.Width, out WidthValue);
+            bool widthSuccess = int.TryParse(e.Width, out int WidthValue);
             if (!widthSuccess)
             {
                 ErrorText = "Invalid Input: Only numbers allowed";
